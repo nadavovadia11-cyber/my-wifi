@@ -3,32 +3,50 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Connect to Wi‑Fi</title>
+<title>Home Wi-Fi</title>
 <style>
-  body {
-    margin: 0; min-height: 100vh; display: grid; place-items: center;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background: #f5f5f7; color: #111;
-  }
-  main {
-    width: min(92vw, 520px); box-sizing: border-box; text-align: center;
-    background: white; border-radius: 24px; padding: 32px 24px;
-    box-shadow: 0 8px 30px rgba(0,0,0,.10);
-  }
-  h1 { margin: 0 0 8px; font-size: 30px; }
-  p { color: #555; line-height: 1.5; }
-  img { width: min(75vw, 360px); height: auto; margin: 16px auto; }
-  .ssid { font-weight: 700; font-size: 20px; word-break: break-word; }
-  .hint { font-size: 14px; }
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#f2f2f7;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#111}
+main{max-width:520px;margin:0 auto;padding:28px 18px 40px}
+.card{background:#fff;border-radius:24px;padding:28px 22px;box-shadow:0 8px 30px rgba(0,0,0,.08);text-align:center}
+h1{font-size:30px;margin:0 0 8px}
+p{color:#555;line-height:1.45}
+.network{font-size:22px;font-weight:700;margin:18px 0 22px;word-break:break-word}
+button{width:100%;border:0;border-radius:14px;padding:15px 18px;font-size:17px;font-weight:600;margin:7px 0;cursor:pointer}
+.primary{background:#111;color:#fff}
+.details{text-align:left;background:#f7f7f9;border-radius:16px;padding:15px;margin-top:18px}
+.details b{display:block;margin-bottom:4px}
+.qr{width:220px;max-width:70vw;height:auto;margin:12px auto}
+#copied{display:none;color:#167c35;font-weight:600;margin:8px 0}
+.note{font-size:13px;color:#777;margin-top:18px}
 </style>
 </head>
 <body>
-<main>
-  <h1>Connect to Wi‑Fi</h1>
-  <p>Scan this QR code with your phone's camera or Wi‑Fi QR scanner.</p>
-  <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAACh0lEQVR4nO2aTWrkMBCFvxobemlDDjBHkW8WcqS5gX2UHCAgLRts3iwkuX9CICGOpz2UoLvd6Fs8KEpVemUTX1nTry/h4LzzzjvvvPPOf8RbWW1+YurBrAcbUt0bdtTj/MZ8kCRFkGIje35tkV7NgEaSpFv+p/U4vzGfaoZOv88G3dnMetAImFm7tx7nt+Hbu/9G1wjSU05YC3/21eP8j/OL2dDN2PAgepz/Bl/ztxOQgDAuaLJmZurfWpHg2gJ5NP3Of4qfzHLBhXSSPUcgvJ5kA0tun/fV4/xGPLpd0F2e5vtdjY+m3/nP8DZQ7rqEWJ7yTclqYtuwox7nt+JLho71mitF8nWYEEEjzVVOe/4ejV/vR4uJ9DTnTiu3VgjoYt63MO6hx/lteW5q7UzJ39hIY3e74fl7XD7ERjakk2zoiheZm2hYS++eepzfiL+qv1BDe8lkjd2M19/j8vV8pikNlTTnqOaNEJv65fE9IL/mL3WItBZhaMoGnTy+x+RL/xy0tJB6gEYGzWxhXAy6t1akdt5Jj/M/wZvZSTVNz9nkgNSWcfBAmRQ+qn7nP1zV1WhqaxXrxpjP5zrf9/P5iPx1fHME6623pHO8sag9vgfjV39jjWVcb0XrCu5vHJV/Nz/K1hWQMznoZpLk8T0kf3l/Mv991lz9q9Suk+D99Di/MR/q6Egv/WKQTmIys1yJ8zt3e+pxfiN+tangYlOR7SzVIuz+1X/D68XMan+1DpH+nR7nv8ffvx9LiE+zgcHURwzaWVOPn8/H5jutXvPZyjgJkHQuRXhfPc5vw6/zI4A8JJwp/iS1HF9MDq+/B+Pz+Xwpsbr61B9dAY+m33nnnXfeeeePyP8FlVX/Y8huKUEAAAAASUVORK5CYII=" alt="Wi‑Fi QR code">
-  <div class="ssid">TALKTALK296BCD</div>
-  <p class="hint">After scanning, your phone should offer to join this network.</p>
-</main>
-</body>
-</html>
+<main><div class="card">
+<h1>📶 Home Wi-Fi</h1>
+<p>Tap below to make joining the Wi-Fi as quick as possible.</p>
+<div class="network">TALKTALK296BCD</div>
+<button class="primary" onclick="copyPassword()">Copy Wi-Fi Password</button>
+<div id="copied">✓ Password copied</div>
+<div class="details">
+<b>Network name</b>TALKTALK296BCD
+<br><br>
+<b>Password</b><span>••••••••</span>
+</div>
+<p><b>On iPhone:</b> tap <b>Settings → Wi-Fi</b>, choose <b>TALKTALK296BCD</b>, then paste the copied password.</p>
+<p><b>On Samsung/Android:</b> you can use the NFC tag directly; it should offer to connect to this network.</p>
+<img class="qr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASgAAAEoAQAAAADDfFG0AAABrUlEQVR4nO1ZwarDMAyTHvv/X9Y7yHYb2GGHUXvgMMgaBBVGtWWHwgfr7xPQoha1qEU9inoBAP1fBCAKhEDlaQuvqagXAMckoyRKjmCctvCainK8QEeHYsjMjxGzsezb4uXl+NC6uhuNqez7USSU+eyZN/4WKvSl2pRp7Dqdy74rXiUoKlKYy2Qfr6moI00xFEXoOB/LvileVJZG71EbAciAqey79JXCwi1m/nXxmo6iFSWJoCChvs1WXiNR1pEIkJnpCVDxOc5m34ASRH+Fh1fliXqe1zxU5a/0qTb4hLIA9PAajXLDSErKBzswcfPXuVJfld5rNpHb+on7ynkOS2U5AvO284lz5bww2kZnsqiYYrqKqezb+iFPU7NljOR/1cqp7DtRkkD71NIaVl/vUHQXSYipN6Zn7eQ1FWVVKTtuCJL11strIOq4HwJsKGoirRgcTmXf5ycQJp8Axcxceak2lX1XvG43HcxCGZeR6++PddwPpVkFbgWyh9dvoNwxRm1ktY/tvMah5EHOzdJLO594s3jN6lFTaETgcpY/ln1bP/TgGxe1qEUt6juof4VrvVAsYpkKAAAAAElFTkSuQmCC" alt="Wi-Fi QR code">
+<p class="note">The QR code is included for another device to scan. An iPhone cannot use its own camera to scan a QR code displayed on that same iPhone.</p>
+</div></main>
+<script>
+async function copyPassword(){
+  try {
+    await navigator.clipboard.writeText('R9Q7KXRX');
+    document.getElementById('copied').style.display='block';
+    setTimeout(()=>document.getElementById('copied').style.display='none',2500);
+  } catch(e) {
+    alert('Copy was blocked by the browser. Please enter the Wi-Fi password manually.');
+  }
+}
+</script>
+</body></html>
